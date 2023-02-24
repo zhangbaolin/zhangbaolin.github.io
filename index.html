@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)https://mom.tfjykj.com/ -->
+<html lang="en" style="font-size: 104px;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+  <title>WELCOME</title>
+  <script>
+    (function (doc, win) {
+      let docEl = doc.documentElement,
+        resizeEvt =
+          "orientationchange" in window ? "orientationchange" : "resize",
+        recalc = function () {
+          let clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = "100px";
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 375) + "px";
+          }
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+  </script>
+  <script src="./WELCOME_files/vue.min.js"></script>
+  <script src="./WELCOME_files/jquery-2.0.2.min.js"></script>
+  <script src="./WELCOME_files/phone.js"></script>
+</head>
+
+
+
+
+
+<body style="background: linear-gradient(rgb(241, 190, 126) 0%, rgb(220, 94, 59) 100%);">
+  <div id="app"><img src="./WELCOME_files/j-banner.png" alt="" class="j-banner">
+    <div style="text-align: center; font-size: 0.18rem; color: rgb(255, 255, 255); padding: 0.3rem 0px 0.14rem;">
+      CONTACT US
+    </div>
+    <div class="btn-box">
+      <a href="https://u.r.sn.cn/TbXUtM" target="_blank" class="btn-1">
+        <img src="./WELCOME_files/j-icon.png" alt="">
+        <span>WHATSAPP</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        href: "openvideo://",
+        phoneList: phoneData.makeFirends
+      },
+      mounted() {
+        // let that = this;
+        // console.log(phoneData, "phoneData====");
+        // $.ajax({
+        //   type:'get',
+        //   url:'phone.js',
+        //   dataType:'json',
+        //   success:function(res){
+        //     console.log(res,'===---json')
+        //   }
+        // });
+        // setTimeout(() => {
+        //   this.downUrl();
+        // }, 1000);
+      },
+      methods: {
+        downUrl(phone) {
+          let that = this;
+          let _clickTime = new Date().getTime();
+          let toSomeoneLink =
+            "whatsapp://send?phone=+" +
+            phone +
+            "&text=" +
+            encodeURIComponent("");
+          window.location.href = toSomeoneLink;
+          let _count = 0,
+            intHandle;
+          intHandle = setInterval(() => {
+            _count++;
+            var elsTime = new Date().getTime() - _clickTime;
+            if (_count >= 100 || elsTime > 5000) {
+              clearInterval(intHandle);
+              //检查app是否打开
+
+              // window.location.href = 'openvideo://';
+              console.log(document.hidden, "=======", document.webkitHidden);
+              if (document.hidden || document.webkitHidden) {
+                // alert('这是第一次')
+                // 打开了
+                // window.location.href = 'https://xgame-apk.oss-cn-hangzhou.aliyuncs.com/tgzhb/JRTT_tgzhb_109_1.3.2_release.apk';
+                // window.location.href = "openvideo://";
+                window.close();
+              } else {
+                // alert("跳转地址");
+                // window.location.href='openvideo://'
+                // window.close();
+                window.location.href = `https://api.whatsapp.com/send/?phone=%2B${phone}&text&type=phone_number&app_absent=0`;
+              }
+            }
+          }, 20);
+        },
+      },
+    });
+  </script>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    div {
+      box-sizing: border-box;
+    }
+
+    #app {
+      position: relative;
+      /* background-image: url('./bg-img.png'); */
+      width: 100%;
+      min-height: 100vh;
+      /* background: #FFFFFF; */
+      /* background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 0 0;
+            background-size: 100% 6.18rem; */
+      /* background: #f55625; */
+    }
+
+    #app .j-banner {
+      width: 3.6rem;
+      height: 4.4435rem;
+      margin: 0.64rem 0.075rem 0;
+    }
+
+    #app .btn-box {
+      width: 100%;
+      padding: 0 0.14rem 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #app .btn-box .btn-1 {
+      width: 1.65rem;
+      height: 0.44rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.22rem;
+      background: linear-gradient(90deg,
+          rgba(220, 62, 187, 1) 0%,
+          rgba(252, 111, 72, 1) 100%);
+      box-shadow: 0 6px 10.5px 0 rgba(69, 14, 3, 0.6);
+      margin: 0 .17rem .17rem 0;
+      text-decoration: none;
+    }
+
+    #app .btn-box .btn-1:nth-of-type(2n) {
+      margin-right: 0;
+    }
+
+    .btn-1 img {
+      width: .24rem;
+      height: .24rem;
+    }
+
+    .btn-1 span {
+      padding-left: .08rem;
+      font-size: .18rem;
+      color: #fff;
+    }
+
+    /* #app .btn-1 {
+        position: fixed;
+        bottom: 0.74rem;
+        left: 0.51rem;
+        width: 2.74rem;
+        height: 0.605rem;
+      }
+      #app .logo {
+        width: 0.6rem;
+        height: 0.6rem;
+        position: absolute;
+        top: 0.25rem;
+        left: 0.25rem;
+      } */
+  </style>
+
+
+</body>
+
+</html>
